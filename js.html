@@ -267,9 +267,13 @@
 
 	document.getElementById("array").innerHTML = myArray[1] + " - Here are the tweets - " + tweets
 
-	console.log(tweets)
 
 	tweets.splice(1, 1) // this will delete the item 1 of the array
+
+	tweets.splice(1, 2, "This is the new Cornflake tweet we spliced in", "Different tweet", "This is the new Cornflake tweet we spliced in") // this will delete the item 1 of the array and replace it 
+
+		console.log(tweets)
+
 	
 </script>
 
