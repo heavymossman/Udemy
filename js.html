@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <style>
+
+    .circle {
+			border-radius: 50%;
+			display: inline-block;
+			margin-right: 20px;
+		}
+		
+		#circle1 {
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+		
+		#circle2 {
+			width: 125px;
+			height: 125px;
+			background: red;
+		}
+		
+		#circle3 {
+			width: 100px;
+			height: 100px;
+			background: blue;
+			position: relative;
+		}
+		
+		#circle4 {
+			width: 50px;
+			height: 50px;
+			background: orange;
+			position: absolute;
+			top: 24%;
+			left: 24%;
+			display: block;
+			border: 3px solid #fff;
+
+	/* Create the animation blocks */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Spinning, gradient circle; CSS only! */
+#advanced {
+	width: 200px;
+	height: 200px;
+	
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+}
+
+    </style>
+
+
+ </head>
+
+ <body>
+
+ <div class="container p-a-2">
+
+ <div class="row">
+
+ <div class="col-md-3">
+
+ <button class="btn btn-success" onclick="alert('Hi Michael')">Click this button </button>
+
+ </div>
+
+  <div class="col-md-3">
+
+  <p id="text">HELLO WORLD</p>
+
+ </div>
+
+  <div class="col-md-3">
+
+ 	<p id="second"> Javascript is like soo.....</p>
+
+ 	<button class="btn btn-default" id="NewButton">Append text</button>
+
+ </div>
+
+  <div class="col-md-3">
+
+  <p id="change">HELLO WORLD</p>
+
+ <button class="btn btn-danger" id="myButton">Change text</button>
+
+ </div>
+
+</div>
+
+ <div class="row">
+
+ <div class="col-md-3">
+
+ <p id="magic"></p>
+
+ <button class="btn btn-danger" id="MagicButton">MAGIC</button>
+
+ </div>
+
+<div class="col-md-3">
+
+<p id="moretext">THIS IS SOME TEXT</p>
+
+ <button class="btn btn-info" id="styletext">Style</button>
+
+</div>
+
+<div class="col-md-6">
+
+<h2>Basic Circles</h2>
+	<div id="circle1" class="circle"></div>
+	<div id="circle2" class="circle"></div>
+	<div id="circle3" class="circle"><div id="circle4" class="circle"></div></div>
+
+
+ </div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-12">
+
+<h1>Variables!</h1>
+
+<input type="text" placeholder="Enter Text" id="inputedit">
+
+ <button class="btn btn-default" id="Update_Text">Change Text</button>
+
+ <p id="amendedtext">This is the original text</p>
+
+</div>
+
+
+ </div>
+
+  <div class="row">
+
+<div class="col-md-12">
+
+<h1>Arrays!</h1>
+
+<p id="array"></p>
+
+</div>
+
+</div>
+
+ </div>
+
+
+
+<script type="text/javascript">
+
+	alert('Page is loaded'); 
+
+
+
+	// One line comment
+
+	document.getElementById("text").innerHTML = "Hello Michael";  // changes HELLO WORLD to Hello Michael
+
+	/* 
+
+	Multile 
+	Line 
+	Comment
+
+	*/
+
+	document.getElementById("myButton").onclick = function () {
+		document.getElementById("change").innerHTML = "Text has been changed!";
+	};
+
+
+	document.getElementById("NewButton").onclick = function () {
+		document.getElementById("second").innerHTML = "I think" + document.getElementById("second").innerHTML + "awesome";
+	};
+
+
+	document.getElementById("MagicButton").onclick = function () {
+		document.getElementById("magic").innerHTML = "I think" + document.getElementById("second").innerHTML + "<strong>magic!</strong>";
+	};
+
+
+	document.getElementById("styletext").onclick = function () {
+		// document.getElementById("moretext").style.color = "red";
+		// document.getElementById("moretext").style.fontSize = "50px";
+		 document.getElementById("moretext").style.display = "none";
+	};
+
+	document.getElementById("circle1").onclick = function () {
+		 document.getElementById("circle1").style.display = "none";
+	};
+
+		document.getElementById("circle2").onclick = function () {
+		 document.getElementById("circle2").style.display = "none";
+	};
+
+		document.getElementById("circle3").onclick = function () {
+		 document.getElementById("circle3").style.display = "none";
+	};
+
+	// VARIABLES 
+
+	var x = 5;
+
+	alert(x);
+
+
+	
+
+	document.getElementById("Update_Text").onclick = function () {
+
+		var changeText = ""; // have to load an empty var first, so it knows will be user input
+
+		changeText = document.getElementById("inputedit").value;
+
+		document.getElementById("amendedtext").innerHTML = changeText
+
+	};
+
+
+	// ARRAYS!! 
+
+	var myArray = new Array();
+
+	myArray[0] = "pizza";  // one item in array is now set. 
+
+	myArray[1] = "chocolate";
+
+	
+	console.log(myArray.length);
+
+	var tweets = ["morning everyone", "you are a troll", "blah blah blah"]
+
+	console.log(tweets)
+
+	
+
+	// alert(myArray[1]); 
+
+	tweets.push = ("Another new tweet"); // This adds a new item to the end of the arrya. 
+
+	document.getElementById("array").innerHTML = myArray[1] + " - Here are the tweets - " + tweets
+
+	console.log(tweets)
+
+	tweets.splice(1, 1) // this will delete the item 1 of the array
+	
+</script>
+
+ </body>
+
+
+ </html>
